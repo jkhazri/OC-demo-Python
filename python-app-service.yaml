@@ -7,6 +7,6 @@ spec:
     app: python-app
   ports:
   - protocol: TCP
-    port: 80
+    port: 20150 # change this port with the given port range of your VCluster
     targetPort: 8080
 
