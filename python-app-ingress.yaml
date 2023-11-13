@@ -1,0 +1,21 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: python-app-ingress
+  namespace: default
+  annotations:
+      nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+  ingressClassName: nginx 
+  rules:
+  - host: docs-vcluster2-443.m1dns.com  # Replace with your domain
+    http:
+      paths:
+      - path: /onecloud
+        pathType: Prefix
+        backend:
+          service:
+            name: python-app-service
+            port:
+              number: 80
+
