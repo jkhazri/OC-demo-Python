@@ -17,5 +17,5 @@ spec:
           service:
             name: python-app-service
             port:
-              number: 80
+              number: 20150 # change this port with the given port range of your VCluster
 
